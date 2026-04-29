@@ -1,0 +1,92 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwqxbrjbdnu2m"]
+
+[ext_resource type="Script" uid="uid://w1hxhk7uobtc" path="res://Pages/DeckMenu/deck_menu.gd" id="1_qllsv"]
+
+[node name="Deck Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qllsv")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.172346
+offset_bottom = 0.32
+grow_horizontal = 2
+text = "Deck Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.17284
+anchor_right = 1.0
+anchor_bottom = 0.814815
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DeckCardsContainer" type="FlowContainer" parent="ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+alignment = 1
+
+[node name="newDeckInput" type="LineEdit" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.000382
+anchor_top = 0.827012
+anchor_right = 0.764641
+anchor_bottom = 1.00004
+offset_left = -0.440063
+offset_top = 0.0959473
+offset_right = 0.133606
+offset_bottom = -0.0267334
+placeholder_text = "New deck name"
+alignment = 1
+keep_editing_on_text_submit = true
+clear_button_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="addDeck" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.764757
+anchor_top = 0.82716
+anchor_right = 1.00019
+anchor_bottom = 1.0
+offset_right = -0.224014
+text = "Add Deck"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="text_submitted" from="newDeckInput" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="addDeck" to="." method="_on_add_deck_pressed"]

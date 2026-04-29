@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnhmc5815ocfv"]
+
+[ext_resource type="Script" uid="uid://wem300l5wcng" path="res://Pages/Deck Editor/Card Display/card_display.gd" id="1_j82bp"]
+
+[node name="Card Display" type="Control"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.154
+offset_bottom = 0.207993
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_j82bp")
+metadata/_edit_use_anchors_ = true
