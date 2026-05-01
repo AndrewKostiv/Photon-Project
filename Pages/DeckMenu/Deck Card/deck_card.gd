@@ -11,7 +11,6 @@ func _on_delete_pressed() -> void:
 	Data.saveData()
 	queue_free()
 
-
 func _on_deck_button_pressed() -> void:
 	Data.activeDeck = deck
 	SceneManager.changeSceneTo(SceneManager.DECK_EDITOR)

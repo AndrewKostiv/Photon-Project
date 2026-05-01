@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj01ud06p1hf0"]
+
+[ext_resource type="Script" uid="uid://ddl2k54gmlp5q" path="res://Pages/Deck Editor/Card Display/Item Display/item_display.gd" id="1_ictwg"]
+
+[node name="Item Display" type="Control"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.154321
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ictwg")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="quesitonInput" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0946181
+anchor_right = 0.516035
+anchor_bottom = 1.0
+offset_right = -0.472015
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Question"
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="answerInput" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.515625
+anchor_right = 0.916208
+anchor_bottom = 1.0
+offset_right = -0.472015
+grow_vertical = 2
+placeholder_text = "Answer"
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Delete" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.915799
+anchor_right = 1.0001
+anchor_bottom = 0.97
+offset_right = -0.112007
+text = "X"
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.0948611
+anchor_bottom = 0.97
+offset_right = -0.279999
+metadata/_edit_use_anchors_ = true
+
+[connection signal="text_changed" from="quesitonInput" to="." method="_on_quesiton_input_text_changed"]
+[connection signal="text_changed" from="answerInput" to="." method="_on_answer_input_text_changed"]
+[connection signal="pressed" from="Delete" to="." method="_on_delete_pressed"]

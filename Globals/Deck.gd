@@ -12,3 +12,11 @@ func getData():
 	var data: Dictionary = { "title": title, "cards": [] }
 	for card:Card in cards: data.cards.append(card.getData())
 	return data
+
+func addCard(newCard:Card = Card.new("Untitled Card")) -> void:
+	cards.append(newCard)
+	Data.saveData()
+
+func removeCard(card:Card) -> void:
+	cards.erase(card)
+	Data.saveData()

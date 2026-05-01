@@ -26,6 +26,8 @@ Data="*res://Globals/Data.gd"
 folder_colors={
 "res://Globals/": "gray",
 "res://Pages/": "red",
+"res://Pages/Deck Editor/Card Display/": "orange",
+"res://Pages/Deck Editor/Card Display/Item Display/": "yellow",
 "res://Pages/DeckMenu/Deck Card/": "orange"
 }
 
