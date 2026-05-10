@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Photon Project"
-run/main_scene="uid://dwqxbrjbdnu2m"
+run/main_scene="uid://dw0vsyb472oda"
 config/features=PackedStringArray("4.4", "Forward Plus", "Redot")
 run/max_fps=60
 config/icon="res://icon.svg"
@@ -24,11 +24,19 @@ Data="*res://Globals/Data.gd"
 [file_customization]
 
 folder_colors={
+"res://Display Cards/": "red",
+"res://Display Cards/Card Display/": "orange",
+"res://Display Cards/Deck Display/": "orange",
+"res://Display Cards/Item Display/": "orange",
 "res://Globals/": "gray",
+"res://Globals/Class Objects/": "pink",
 "res://Pages/": "red",
-"res://Pages/Deck Editor/Card Display/": "orange",
-"res://Pages/Deck Editor/Card Display/Item Display/": "yellow",
-"res://Pages/DeckMenu/Deck Card/": "orange"
+"res://Pages/Data Editors/": "orange",
+"res://Pages/Data Editors/Card Editor/": "yellow",
+"res://Pages/Data Editors/Deck Editor/": "yellow",
+"res://Pages/Data Editors/Item Editor/": "yellow",
+"res://Pages/DeckMenu/": "orange",
+"res://Pages/Main/": "orange"
 }
 
 [gui]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cvn7huhlcqppv"]
 
-[ext_resource type="Script" uid="uid://t8kjk4f82oc8" path="res://Pages/DeckMenu/Deck Card/deck_card.gd" id="1_qlk5m"]
+[ext_resource type="Script" uid="uid://t8kjk4f82oc8" path="res://Display Cards/Deck Display/deck_display.gd" id="1_itg0m"]
 
-[node name="Deck Card" type="Control"]
+[node name="deck_display" type="Control"]
 custom_minimum_size = Vector2(100, 150)
 layout_mode = 3
 anchor_right = 0.152
@@ -11,7 +11,7 @@ offset_right = -0.104004
 offset_bottom = -0.0559998
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qlk5m")
+script = ExtResource("1_itg0m")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

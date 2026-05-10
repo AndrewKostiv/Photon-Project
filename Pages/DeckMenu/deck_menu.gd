@@ -1,4 +1,6 @@
 extends Control
+
+signal nextScene(data:Deck)
 @onready var new_deck_input: LineEdit = %newDeckInput
 @onready var deck_cards_container: FlowContainer = %DeckCardsContainer
 
@@ -26,11 +28,18 @@ func displayDecks() -> void:
 	for deck:Deck in decks: displayDeck(deck)
 
 func displayDeck(newDeck:Deck) -> void:
-	var newDeckCard := SceneManager.DECK_CARD.instantiate()
-	newDeckCard.setDeck(newDeck)
-	deck_cards_container.add_child(newDeckCard)
+	var newDeckDisplay := SceneManager.DECK_DISPLAY.instantiate()
+	if !newDeckDisplay: 
+		printerr("Failed to instantiate DECK_DISPLAY")
+		return
+	newDeckDisplay.setDeck(newDeck)
+	deck_cards_container.add_child(newDeckDisplay)
+	newDeckDisplay.nextScene.connect(onDeckSelected)
 
 func clearDisplayedDecks() -> void:
 	var displayedDecks = deck_cards_container.get_children()
 	for deckCard in displayedDecks:
 		deckCard.queue_free()
+
+func onDeckSelected(data:Deck):
+	nextScene.emit(data)

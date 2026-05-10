@@ -1,4 +1,7 @@
 extends Control
+# deck display
+
+signal nextScene(deck:Deck)
 
 @export var deck:Deck
 
@@ -11,6 +14,4 @@ func _on_delete_pressed() -> void:
 	Data.saveData()
 	queue_free()
 
-func _on_deck_button_pressed() -> void:
-	Data.activeDeck = deck
-	SceneManager.changeSceneTo(SceneManager.DECK_EDITOR)
+func _on_deck_button_pressed() -> void: nextScene.emit(deck)
