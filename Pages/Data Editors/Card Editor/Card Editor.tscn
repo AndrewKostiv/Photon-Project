@@ -19,11 +19,42 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="Title Edit" type="LineEdit" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.00028
 anchor_bottom = 0.126247
 offset_right = -0.328003
 offset_bottom = 0.192001
+placeholder_text = "Title"
+alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.126543
+anchor_right = 0.999847
+anchor_bottom = 0.857741
+offset_right = 0.175964
+offset_bottom = 0.18399
+metadata/_edit_use_anchors_ = true
+
+[node name="Items Container" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Add Item" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.87037
+anchor_right = 0.9995
+anchor_bottom = 1.00033
+offset_right = 0.575989
+offset_bottom = -0.216003
+text = "Add Item"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Add Item" to="." method="_on_add_item_pressed"]

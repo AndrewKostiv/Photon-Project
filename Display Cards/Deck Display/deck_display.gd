@@ -5,7 +5,7 @@ signal nextScene(deck:Deck)
 
 @export var deck:Deck
 
-func setDeck(newDeck:Deck): 
+func setData(newDeck:Deck): 
 	deck = newDeck
 	%TitleLabel.text = newDeck.title
 

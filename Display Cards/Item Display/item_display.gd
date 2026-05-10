@@ -9,6 +9,10 @@ signal deleteItem(item:Item)
 
 var item: Item
 
+func setData(newItem:Item) -> void:
+	item = newItem
+	title.text = newItem.question
+
 func _init(newItem:Item) -> void:
 	item = newItem
 	title.text = item.question

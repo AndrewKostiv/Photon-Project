@@ -32,7 +32,7 @@ func displayDeck(newDeck:Deck) -> void:
 	if !newDeckDisplay: 
 		printerr("Failed to instantiate DECK_DISPLAY")
 		return
-	newDeckDisplay.setDeck(newDeck)
+	newDeckDisplay.setData(newDeck)
 	deck_cards_container.add_child(newDeckDisplay)
 	newDeckDisplay.nextScene.connect(onDeckSelected)
 

@@ -27,7 +27,7 @@ func getData() -> Dictionary:
 	return data
 
 ## Adds an item to items:Array[Item] and saves
-func addItem(newItem:Item) -> void:
+func addItem(newItem:Item = Item.new()) -> void:
 	items.append(newItem)
 	Data.saveData()
 

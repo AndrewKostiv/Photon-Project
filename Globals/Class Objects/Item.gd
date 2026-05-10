@@ -5,7 +5,7 @@ class_name Item
 @export var answers: Array[String]
 
 ## Returns new Item object
-func _init(newQuestion:String, newAnswers:Array[String]) -> void:
+func _init(newQuestion:String = "", newAnswers:Array[String] = []) -> void:
 	question = newQuestion
 	answers = newAnswers
 
@@ -17,4 +17,10 @@ func _init(newQuestion:String, newAnswers:Array[String]) -> void:
 ## [codeblock]
 ## {"question": question, "answer": answer}
 ## [/codeblock]
-func getData() -> Dictionary: return { "question": question, "answers": answers }
+func getData() -> Dictionary: 
+	var data:Dictionary = { "question": question, "answers": [] }
+	for answer:String in answers: data.answers.append(answer)
+	return  data
+
+func getAnswers() -> Array[String]:
+	return answers

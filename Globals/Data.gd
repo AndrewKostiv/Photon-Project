@@ -4,11 +4,9 @@ signal decksLoaded
 
 const SAVE_FILE_PATH: String = "user://StudyToolSave.save"
 var decks: Array[Deck] = []
-var activeDeck: Deck
 
 func _ready() -> void:
 	loadData()
-	if decks[0]: activeDeck = decks[0]
 
 ## Saves data
 func saveData():
