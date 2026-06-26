@@ -20,9 +20,9 @@ func removeCard(card:Card):
 func reDrawCards() -> void:
 	var displayedCards = cards_container.get_children()
 	for card:Control in displayedCards: card.queue_free()
-	for card:Card in deck.cards: addCardDisplay(card)
+	for card:Card in deck.cards: _addCardDisplay(card)
 
-func addCardDisplay(newCard:Card):
+func _addCardDisplay(newCard:Card):
 	var cardDisplay = SceneManager.getCardDisplay()
 	cards_container.add_child(cardDisplay)
 	cardDisplay.setData(newCard)

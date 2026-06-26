@@ -18,7 +18,6 @@ func _on_back_pressed() -> void:
 	if typeof(nextSceneData) == typeof("Deck Menu"): open_deck_menu()
 	elif nextSceneData is Deck: open_deck_editor(nextSceneData)
 	elif nextSceneData is Card: open_card_editor(nextSceneData)
-	elif nextSceneData is Item: open_item_editor(nextSceneData)
 	else: printerr("No scene type found")
 
 func open_deck_menu() -> void:
@@ -43,14 +42,4 @@ func open_card_editor(card:Card) -> void:
 	removeCurrentScene()
 	var cardEditor = SceneManager.getCardEditor()
 	scene_container.add_child(cardEditor)
-	cardEditor.nextScene.connect(open_item_editor)
 	cardEditor.setup(card)
-
-func open_item_editor(item:Item) -> void: 
-	#print_debug("Open item editor")
-	scene_stack.append(scene_container.get_child(0).getData())
-	removeCurrentScene()
-	var itemEditor = SceneManager.getItemEditor()
-	scene_container.add_child(itemEditor)
-	itemEditor.setup(item)
- 

@@ -2,8 +2,11 @@ extends Control
 # deck display
 
 signal nextScene(deck:Deck)
-
+@onready var delete_deck: Button = %DeleteDeck
 @export var deck:Deck
+
+func _ready() -> void:
+	delete_deck.visible = true  # TODO: fix this so it only shows when hovered
 
 func setData(newDeck:Deck): 
 	deck = newDeck
@@ -15,3 +18,9 @@ func _on_delete_pressed() -> void:
 	queue_free()
 
 func _on_deck_button_pressed() -> void: nextScene.emit(deck)
+
+#func _on_mouse_entered() -> void:
+	#delete_deck.visible = true
+#
+#func _on_mouse_exited() -> void:
+	#delete_deck.visible = false

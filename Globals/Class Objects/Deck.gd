@@ -1,11 +1,12 @@
 extends Resource
 class_name Deck
 
-@export var title:String
+const DEFAULT_TITLE:String = "Untitled Deck"
+@export var title:String = DEFAULT_TITLE
 @export var cards:Array[Card] = []
 
 ## Returns new Deck object
-func _init(newTitle:String = "", newCards:Array[Card] = []) -> void:
+func _init(newTitle:String = DEFAULT_TITLE, newCards:Array[Card] = []) -> void:
 	title = newTitle
 	cards = newCards
 

@@ -48,16 +48,7 @@ func _getDecks(decksArray:Array) -> Array[Deck]: # Only for loadData
 
 func _getCards(cardsArray:Array) -> Array[Card]: # Only for loadData
 	var result: Array[Card] = []
-	for card: Dictionary in cardsArray: result.append(Card.new(card.title, _getItems(card.items)))
+	for card: Dictionary in cardsArray: result.append(Card.new(card.title, card.question, card.answer))
 	return result
 
-func _getItems(itemsArray:Array) -> Array[Item]: # Only for loadData
-	var result: Array[Item] = []
-	for item: Dictionary in itemsArray: result.append(Item.new(item.question, _getAnswers(item.answers)))
-	return result
-
-func _getAnswers(answers:Array) -> Array[String]:
-	var result :Array[String] 
-	for answer:Dictionary in answers: result.append(answer)
-	return result
 #endregion

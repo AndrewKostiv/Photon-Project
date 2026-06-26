@@ -1,9 +1,7 @@
 extends Control
 # Card editor
-signal nextScene(data:Item)
 
-@onready var title_edit: LineEdit = $"Title Edit"
-@onready var add_item: Button = $"Add Item"
+@onready var title_edit: LineEdit = %"Title Edit"
 @onready var items_container: VBoxContainer = %"Items Container"
 
 var card: Card
@@ -18,15 +16,12 @@ func setup(newCard:Card) -> void:
 func getData():
 	return card
 
-func onItemSelected(item:Item) -> void: 
-	nextScene.emit(item)
+func _on_title_edit_text_changed(new_text: String) -> void:
+	card.title = new_text
+	Data.saveData()
 
-func _on_add_item_pressed() -> void:
-	card.addItem()
+func _on_delete_pressed() -> void:
+	pass # Replace with function body.
 
-func redrawItemDisplay():
-	for item in card.items:
-		var newItemDisplay = SceneManager.getItemDisplay()
-		items_container.add_child(newItemDisplay)
-		newItemDisplay.setData(item)
-		
+func _on_swap_pressed() -> void:
+	pass

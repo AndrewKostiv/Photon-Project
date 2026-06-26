@@ -27,14 +27,12 @@ folder_colors={
 "res://Display Cards/": "red",
 "res://Display Cards/Card Display/": "orange",
 "res://Display Cards/Deck Display/": "orange",
-"res://Display Cards/Item Display/": "orange",
 "res://Globals/": "gray",
 "res://Globals/Class Objects/": "pink",
 "res://Pages/": "red",
 "res://Pages/Data Editors/": "orange",
 "res://Pages/Data Editors/Card Editor/": "yellow",
 "res://Pages/Data Editors/Deck Editor/": "yellow",
-"res://Pages/Data Editors/Item Editor/": "yellow",
 "res://Pages/DeckMenu/": "orange",
 "res://Pages/Main/": "orange"
 }
