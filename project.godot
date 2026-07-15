@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Photon Project"
-run/main_scene="uid://dw0vsyb472oda"
+run/main_scene="uid://dwqxbrjbdnu2m"
 config/features=PackedStringArray("4.4", "Forward Plus", "Redot")
 run/max_fps=60
 config/icon="res://icon.svg"
@@ -27,14 +27,19 @@ folder_colors={
 "res://Display Cards/": "red",
 "res://Display Cards/Card Display/": "orange",
 "res://Display Cards/Deck Display/": "orange",
-"res://Globals/": "gray",
-"res://Globals/Class Objects/": "pink",
+"res://Globals/": "red",
+"res://Globals/Class Objects/": "orange",
+"res://Images/": "red",
 "res://Pages/": "red",
 "res://Pages/Data Editors/": "orange",
-"res://Pages/Data Editors/Card Editor/": "yellow",
 "res://Pages/Data Editors/Deck Editor/": "yellow",
 "res://Pages/DeckMenu/": "orange",
-"res://Pages/Main/": "orange"
+"res://Pages/Study Modes/": "orange",
+"res://Pages/Study Modes/Auto/": "yellow",
+"res://Pages/Study Modes/Multiple Choice/": "yellow",
+"res://Pages/Study Modes/Speed/": "yellow",
+"res://Pages/Study Modes/Spelling/": "yellow",
+"res://Themes/": "red"
 }
 
 [gui]

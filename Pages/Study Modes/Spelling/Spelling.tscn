@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnt7ghfomt417"]
+
+[ext_resource type="Script" uid="uid://ciwdevxscdweg" path="res://Pages/Study Modes/Spelling/spelling.gd" id="1_y03x1"]
+
+[node name="Spelling" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y03x1")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.234
+anchor_bottom = 0.122
+offset_right = 0.431976
+offset_bottom = -0.0560074
+text = "Back
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

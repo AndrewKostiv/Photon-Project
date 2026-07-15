@@ -1,0 +1,107 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxmdddwa047nq"]
+
+[ext_resource type="Script" uid="uid://dtat72xahlhxd" path="res://Pages/Study Modes/Multiple Choice/multiple_choice.gd" id="1_aqsmk"]
+[ext_resource type="Theme" uid="uid://fj77lrsslm3v" path="res://Themes/LableTheme.tres" id="2_6e7ur"]
+
+[node name="MultipleChoiceDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aqsmk")
+
+[node name="question" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.206597
+anchor_right = 0.799563
+anchor_bottom = 0.29142
+offset_right = -0.0960083
+offset_bottom = 0.159988
+theme = ExtResource("2_6e7ur")
+text = "Question"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0911458
+anchor_top = 0.5
+anchor_right = 0.9135
+anchor_bottom = 0.823815
+offset_right = -0.35199
+offset_bottom = 0.167999
+columns = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Answer 1" type="Label" parent="GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_6e7ur")
+text = "Answer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Answer 2" type="Label" parent="GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_6e7ur")
+text = "Answer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Answer 3" type="Label" parent="GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_6e7ur")
+text = "Answer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Answer 4" type="Label" parent="GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_6e7ur")
+text = "Answer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UserInput" type="LineEdit" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_top = 0.823885
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.12262
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+anchor_right = 0.167
+anchor_bottom = 0.133
+offset_right = -0.384018
+offset_bottom = -0.183998
+text = "Back"
+
+[connection signal="text_submitted" from="UserInput" to="." method="_on_user_input_text_submitted"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

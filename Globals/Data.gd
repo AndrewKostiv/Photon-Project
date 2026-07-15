@@ -1,9 +1,16 @@
 extends Node
-
 signal decksLoaded
 
 const SAVE_FILE_PATH: String = "user://StudyToolSave.save"
 var decks: Array[Deck] = []
+var selectedDeck: Deck 
+enum Mode {
+	AUTO,
+	MULTIPLECHOICE,
+	SPELLING,
+	SPEED,
+}
+var selectedStudyMode: Mode
 
 func _ready() -> void:
 	loadData()

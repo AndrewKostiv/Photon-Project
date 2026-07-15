@@ -34,7 +34,7 @@ func displayDeck(newDeck:Deck) -> void:
 		return
 	newDeckDisplay.setData(newDeck)
 	deck_cards_container.add_child(newDeckDisplay)
-	newDeckDisplay.nextScene.connect(onDeckSelected)
+	#newDeckDisplay.nextScene.connect(onDeckSelected)
 
 func clearDisplayedDecks() -> void:
 	var displayedDecks = deck_cards_container.get_children()

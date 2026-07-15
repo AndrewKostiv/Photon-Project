@@ -1,15 +1,17 @@
 extends Control
 # deck editor
 
-signal nextScene(data:Card)
 @onready var title_label: LineEdit = %TitleLabel
 @onready var cards_container: VBoxContainer = %CardsContainer
 @onready var add_card_input: LineEdit = %AddCardInput
-@onready var deck:Deck
+@onready var deck:Deck = Data.selectedDeck
 
-func setup(newDeck:Deck) -> void:
-	deck = newDeck
-	title_label.text = newDeck.title
+
+func _ready() -> void:
+	if !deck:
+		SceneManager.changeSceneTo(SceneManager.DECK_MENU)
+		printerr("No deck is selected")
+	title_label.text = deck.title
 	reDrawCards() 
 
 func removeCard(card:Card):
@@ -27,16 +29,6 @@ func _addCardDisplay(newCard:Card):
 	cards_container.add_child(cardDisplay)
 	cardDisplay.setData(newCard)
 	cardDisplay.deleteCard.connect(removeCard)
-	#cardDisplay.favorCard.connect(toggleFavorCard) TODO: reinstate this when implemented
-	cardDisplay.nextScene.connect(onCardSelected)
-
-func onCardSelected(data:Card) -> void:
-	nextScene.emit(data)
-
-## Returns deck:Deck
-## [br]
-## Used by Main to manage scenes
-func getData(): return deck
 
 func _on_add_card_pressed() -> void: 
 	deck.addCard()
@@ -45,3 +37,27 @@ func _on_add_card_pressed() -> void:
 func _on_title_label_text_changed(new_text: String) -> void:
 	deck.title = new_text
 	Data.saveData()
+
+func _on_auto_pressed() -> void:
+	Data.selectedDeck = deck
+	Data.selectedStudyMode = Data.Mode.AUTO
+	SceneManager.changeSceneTo(SceneManager.STUDY_MODE)
+
+func _on_multiple_choice_pressed() -> void:
+	Data.selectedDeck = deck
+	Data.selectedStudyMode = Data.Mode.MULTIPLECHOICE
+	SceneManager.changeSceneTo(SceneManager.STUDY_MODE)
+
+func _on_spelling_pressed() -> void:
+	Data.selectedDeck = deck
+	Data.selectedStudyMode = Data.Mode.SPELLING
+	SceneManager.changeSceneTo(SceneManager.STUDY_MODE)
+
+func _on_speed_pressed() -> void:
+	Data.selectedDeck = deck
+	Data.selectedStudyMode = Data.Mode.SPEED
+	SceneManager.changeSceneTo(SceneManager.STUDY_MODE)
+
+func _on_back_pressed() -> void:
+	Data.selectedDeck = null
+	SceneManager.changeSceneTo(SceneManager.DECK_MENU)

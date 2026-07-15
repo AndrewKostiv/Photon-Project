@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://te7fos185sl7"]
+
+[ext_resource type="Script" uid="uid://c0qqkwhyqyg6s" path="res://Pages/Study Modes/Auto/auto.gd" id="1_a5cpo"]
+
+[node name="Auto" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a5cpo")
+
+[node name="back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.232736
+anchor_bottom = 0.185037
+offset_right = -0.112
+offset_bottom = 0.095993
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

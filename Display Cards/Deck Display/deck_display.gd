@@ -1,7 +1,6 @@
 extends Control
 # deck display
 
-signal nextScene(deck:Deck)
 @onready var delete_deck: Button = %DeleteDeck
 @export var deck:Deck
 
@@ -17,7 +16,9 @@ func _on_delete_pressed() -> void:
 	Data.saveData()
 	queue_free()
 
-func _on_deck_button_pressed() -> void: nextScene.emit(deck)
+func _on_deck_button_pressed() -> void: 
+	Data.selectedDeck = deck
+	SceneManager.changeSceneTo(SceneManager.DECK_EDITOR)
 
 #func _on_mouse_entered() -> void:
 	#delete_deck.visible = true
