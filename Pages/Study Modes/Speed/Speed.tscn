@@ -20,4 +20,18 @@ offset_right = 0.455994
 offset_bottom = 0.0879974
 text = "Back"
 
+[node name="UserInput" type="LineEdit" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.854938
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+keep_editing_on_text_submit = true
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="text_submitted" from="UserInput" to="." method="_on_user_input_text_submitted"]

@@ -4,6 +4,7 @@ signal decksLoaded
 const SAVE_FILE_PATH: String = "user://StudyToolSave.save"
 var decks: Array[Deck] = []
 var selectedDeck: Deck 
+var activeCards: Array[Card] = []
 enum Mode {
 	AUTO,
 	MULTIPLECHOICE,
@@ -55,7 +56,23 @@ func _getDecks(decksArray:Array) -> Array[Deck]: # Only for loadData
 
 func _getCards(cardsArray:Array) -> Array[Card]: # Only for loadData
 	var result: Array[Card] = []
-	for card: Dictionary in cardsArray: result.append(Card.new(card.title, card.question, card.answer))
+
+
+	for card: Dictionary in cardsArray: 
+		var accuracy: Array[float] = []
+		var times: Array[float] = []
+		
+		accuracy.assign(card.get("accuracyArray", []))
+		times.assign(card.get("timeArray", []))
+		
+		result.append(Card.new(
+			card.title,
+			card.question,
+			card.answer,
+			card.get("isFavored", false),
+			accuracy,
+			times
+		))
 	return result
 
 #endregion

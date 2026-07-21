@@ -94,6 +94,7 @@ offset_top = 0.12262
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
+keep_editing_on_text_submit = true
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
@@ -103,5 +104,10 @@ offset_right = -0.384018
 offset_bottom = -0.183998
 text = "Back"
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
 [connection signal="text_submitted" from="UserInput" to="." method="_on_user_input_text_submitted"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

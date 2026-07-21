@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnt7ghfomt417"]
+[gd_scene load_steps=3 format=3 uid="uid://dnt7ghfomt417"]
 
 [ext_resource type="Script" uid="uid://ciwdevxscdweg" path="res://Pages/Study Modes/Spelling/spelling.gd" id="1_y03x1"]
+[ext_resource type="Theme" uid="uid://fj77lrsslm3v" path="res://Themes/LableTheme.tres" id="2_kmpa0"]
 
 [node name="Spelling" type="Control"]
 layout_mode = 3
@@ -21,4 +22,35 @@ offset_bottom = -0.0560074
 text = "Back
 "
 
+[node name="UserInput" type="LineEdit" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.873457
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+keep_editing_on_text_submit = true
+metadata/_edit_use_anchors_ = true
+
+[node name="question" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.206597
+anchor_top = 0.160494
+anchor_right = 0.799563
+anchor_bottom = 0.451914
+offset_right = -0.0960083
+offset_bottom = 0.159988
+theme = ExtResource("2_kmpa0")
+text = "Question"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="text_submitted" from="UserInput" to="." method="_on_user_input_text_submitted"]

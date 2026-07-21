@@ -3,9 +3,7 @@ extends Control
 
 @onready var title_label: LineEdit = %TitleLabel
 @onready var cards_container: VBoxContainer = %CardsContainer
-@onready var add_card_input: LineEdit = %AddCardInput
 @onready var deck:Deck = Data.selectedDeck
-
 
 func _ready() -> void:
 	if !deck:
@@ -33,10 +31,12 @@ func _addCardDisplay(newCard:Card):
 func _on_add_card_pressed() -> void: 
 	deck.addCard()
 	reDrawCards()
-
+	%ScrollContainer.scroll_vertical += 99999
 func _on_title_label_text_changed(new_text: String) -> void:
 	deck.title = new_text
 	Data.saveData()
+
+#region Select study mode buttons
 
 func _on_auto_pressed() -> void:
 	Data.selectedDeck = deck
@@ -57,7 +57,9 @@ func _on_speed_pressed() -> void:
 	Data.selectedDeck = deck
 	Data.selectedStudyMode = Data.Mode.SPEED
 	SceneManager.changeSceneTo(SceneManager.STUDY_MODE)
+#endregion
 
 func _on_back_pressed() -> void:
+	Data.saveData()
 	Data.selectedDeck = null
 	SceneManager.changeSceneTo(SceneManager.DECK_MENU)

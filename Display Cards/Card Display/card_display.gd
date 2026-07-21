@@ -24,10 +24,12 @@ func _on_delete_pressed() -> void:
 func _on_favor_pressed() -> void: 
 	card.isFavored = !card.isFavored
 	favor.icon = FILLED_STAR if card.isFavored else EMPTY_STAR
-	print_debug("Test")
+	Data.saveData()
 
 func _on_question_text_changed(new_text: String) -> void:
 	card.question = new_text
+	Data.saveData()
 
 func _on_answer_text_changed(new_text: String) -> void:
 	card.answer = new_text
+	Data.saveData()

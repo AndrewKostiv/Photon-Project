@@ -43,13 +43,15 @@ alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Editor"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.305556
 anchor_right = 1.00036
-anchor_bottom = 0.788852
+anchor_bottom = 0.901507
 offset_right = -0.319946
 offset_bottom = -0.175964
+horizontal_scroll_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Editor/ScrollContainer"]
@@ -75,26 +77,14 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.804012
-anchor_right = 0.999455
-anchor_bottom = 0.896543
+anchor_left = 0.0113636
+anchor_top = 0.901235
+anchor_right = 0.986954
+anchor_bottom = 0.993765
 offset_right = 0.47998
 offset_bottom = 0.039978
 text = "Add Card
 "
-metadata/_edit_use_anchors_ = true
-
-[node name="AddCardInput" type="LineEdit" parent="Editor"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 60)
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.907218
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 0.12262
-grow_horizontal = 2
-grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Study Modes" type="Control" parent="."]

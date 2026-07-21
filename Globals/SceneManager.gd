@@ -24,5 +24,6 @@ func getDeckEditor(): return DECK_EDITOR.instantiate()
 
 ## Change root scene
 func changeSceneTo(newScene: PackedScene):
+	Data.saveData()
 	if newScene: get_tree().change_scene_to_packed(newScene)
 	else: printerr("Failed to change scene")
